@@ -1,0 +1,20 @@
+<html>
+<body>
+<p>Built using <a style="color: #fff;" href="https://github.com/3kh0/echolog" target="_blank">echolog</a></p>
+    <script>
+      let echolog = {};
+      // here is the fun
+      fetch("https://wtfismyip.com/json")
+        .then((response) => response.json())
+        .then((data) => {
+          let echolog = {
+            ipAddress: data.YourFuckingIPAddress,
+          };
+
+          var ip = document.getElementById("ip")
+          ip.innerText = echolog.ipAddress
+        })
+        .catch((error) => console.error(error));
+    </script>
+    </body>
+    </html>
